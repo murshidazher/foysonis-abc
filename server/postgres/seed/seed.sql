@@ -47,8 +47,8 @@ AND p.name='MID';
 INSERT INTO user_account (name, email, joined, group_id, user_role_id) 
 SELECT 'Admin', 'admin@test.com', NOW(), g.id, u.id
 FROM user_group g, user_role u
-WHERE g.name='Customer'
-AND u.name='Account Holder';
+WHERE g.name='Employee'
+AND u.name='Administrator';
 
 
 INSERT INTO credential (hash, email) 
@@ -67,7 +67,7 @@ VALUES ('$2a$10$0fetMndoOk3k4bzCE7UpVOW6xMTL8Yv9C5sxSlkTMsu/5rbL3WVYS', 'test@te
 INSERT INTO user_account (name, email, joined, group_id, user_role_id) 
 SELECT 'Isobelle Patterson', 'belle@gmail.com', NOW(), g.id, u.id
 FROM user_group g, user_role u
-WHERE g.name='Account Holder'
+WHERE g.name='Customer'
 AND u.name='Account Holder';
 
 INSERT INTO credential (hash, email) 
