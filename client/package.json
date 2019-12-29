@@ -1,0 +1,46 @@
+{
+  "name": "foysonis-abc-client",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The ABC Bank web app's front-end.",
+  "dependencies": {
+    "lodash": "4.17.13",
+    "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-p5": "^1.0.6",
+    "react-scripts": "3.0.1",
+    "react-super-responsive-table": "^5.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint '**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:pretty": "npm prettier-eslint 'src/**/*.js' --write"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier-eslint": "^9.0.0",
+    "prettier-eslint-cli": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+version: '3.6'
+
+services:
+  # Backend API
+  foysonis-abc-server:
+    container_name: abc-container
+    build: ./
+    command: npm start
+    working_dir: /usr/src/foysonis-abc-server
+    environment:
+      POSTGRES_URI: postgres://murshid:password@postgres:5432/abc-db-docker
+      REDIS_URI: redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+    ports: 
+      - "8080:8080"
+    volumes:
+      - ./:/usr/src/foysonis-abc-server
+
+  # postgres
+  postgres:
+    environment:
+      POSTGRES_USER: murshid
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: abc-db-docker
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports:
+      - "5432:5432"
+
+  # redis
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"

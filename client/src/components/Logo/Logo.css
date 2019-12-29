@@ -1,0 +1,14 @@
+
+
+.logo {
+    border-radius: 2px solid black;
+    text-align: center;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
