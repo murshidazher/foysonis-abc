@@ -516,9 +516,6 @@ class App extends Component {
       });
   });
 
-  
-
-
   onSubmit = () => {
     fetch("http://localhost:8080/account/transaction", {
       method: "post",
