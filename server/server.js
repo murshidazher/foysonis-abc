@@ -31,6 +31,16 @@ const db = knex({
   connection: process.env.POSTGRES_URI
 });
 
+// const db = knex({
+//   client: 'pg',
+//   connection: {
+//     host : '127.0.0.1',
+//     user : 'murshid',
+//     password : '',
+//     database : 'abc_bank'
+//   }
+// });
+
 
 // setup redis client
 const redisClient = redis.createClient(process.env.REDIS_URI);

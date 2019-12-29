@@ -6,7 +6,8 @@ class Login extends React.Component {
     super();
     this.state = {
       loginEmail: "",
-      loginPassword: ""
+      loginPassword: "",
+      changed: "",
     };
   }
 
@@ -47,7 +48,14 @@ class Login extends React.Component {
             .then(user => { 
               if (user && user.email) {
                 this.props.initializeUser(data).then((data) => {
-                  this.props.onRouteChange("home");
+                  this.setState({ changed: true });
+                  setTimeout(
+                    function() {
+                      this.props.onRouteChange("home");
+                    }
+                    .bind(this),
+                    3000
+                );
                 }).catch((error) => {  
                   console.log(error);  
                 });

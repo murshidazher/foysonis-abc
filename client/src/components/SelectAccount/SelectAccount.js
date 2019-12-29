@@ -20,23 +20,6 @@ class SelectAccount extends React.Component {
         this.setState({ changed: true });
     }
 
-    onAccountsUpdate = (data) => {
-        fetch(`http://localhost:8080/profile/${this.props.user.id}`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": 'Bearer ' + window.sessionStorage.getItem('token')
-            },
-            body: JSON.stringify({
-                id: this.props.id
-            })
-        }).then(resp => {
-            if (resp.status === 200 || resp.status === 304) {
-                this.props.loadAccounts({ ...this.props.user, ...data }); 
-            }
-        }).catch(console.log());
-    }
-
     render() {
         const { data } = this.props;
 

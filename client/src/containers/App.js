@@ -151,6 +151,9 @@ class App extends Component {
   });
 
   loadGroupType = () => new Promise((resolve, reject) => {
+    console.log('loadGroupType');
+    console.log(this.state.user);
+    console.log(this.state.user.group_id);
     fetch(`http://localhost:8080/role/group/${this.state.user.group_id}`, {
       method: "get",
       headers: {
@@ -421,12 +424,17 @@ class App extends Component {
     })
       .then(resp => resp.json())
       .then(transactions => {
-        this.setState(Object.assign(this.state.user,
-          {
-            transactionsHistory: transactions
-          }), () => {
-            resolve('done');
-          });
+        if (transactions !== null && transactions !== 'Unable to get') {
+          this.setState(Object.assign(this.state.user,
+            {
+              transactionsHistory: transactions
+            }), () => {
+              resolve('done');
+            });
+        } else {
+          resolve('done');
+        }
+        
       })
   });
 
@@ -526,14 +534,14 @@ class App extends Component {
       })
     })
       .then(response => response.json())
-      .then(response => {
+      .then(response => async () => {
         if (response) {
-          const { balance, last_transaction_id } = response;
-          this.setState(Object.assign(this.state.user,
-            {
-              balance: balance,
-              l_date: last_transaction_id
-            }),() => {});
+            const { balance, last_transaction_id } = response;
+            this.setState(Object.assign(this.state.user,
+              {
+                balance: balance,
+                l_date: last_transaction_id
+              }),() => {});
         }
       })
       .catch(err => console.log(err));

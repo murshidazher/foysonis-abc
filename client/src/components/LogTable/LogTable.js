@@ -46,7 +46,7 @@ render() {
     </Thead>
     <Tbody>
         {
-          (this.props.data) &&
+          (this.props.data !== null && this.props.data !== 'Unable to get') &&
           this.props.data.map((value, index) => {  
             let t_type = this.getTypeHandler(value.t_type_id);
 
