@@ -8,7 +8,7 @@ CREATE TABLE transaction_log
     t_amount DECIMAL NOT NULL,
     new_balance DECIMAL NOT NULL,
     bank_account_id INTEGER NOT NULL REFERENCES bank_account(id),
-    user_account_id INTEGER NOT NULL REFERENCES user_account(id),
+    user_account_id INTEGER NOT NULL REFERENCES user_account(id)
 );
 
 COMMIT;

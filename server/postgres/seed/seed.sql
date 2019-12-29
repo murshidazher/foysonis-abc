@@ -43,20 +43,6 @@ WHERE r.name='Bank Officer'
 AND p.name='MID';
 
 
-INSERT INTO user_account
-    (name, email, entries, joined, phone, city)
-VALUES
-    (
-        'Isobelle Patterson',
-        'belle@gmail.com',
-        '0',
-        '2019-10-05 08:53:16.687',
-        '853 243 764 02',
-        'Arkansas'
-);
-
-
-
 
 INSERT INTO user_account (name, email, joined, group_id, user_role_id) 
 SELECT 'Admin', 'admin@test.com', NOW(), g.id, u.id
@@ -85,10 +71,10 @@ WHERE g.name='Account Holder'
 AND u.name='Account Holder';
 
 INSERT INTO credential (hash, email) 
-VALUES ('$2a$10$7ujfGO.aeGvLsu4LHhS1XeBhsw4KP5f/o8rXYR36aXnCHmp7xuR/q', 'belle@gmail.com');
+VALUES ('$2a$10$fbe/V4wRBu.PlOapvMO0.ewm2Rxi5n8xjtpbvFtTIYm2DTEsTIJvK', 'belle@gmail.com');
 
-INSERT INTO bank_account (balance, user_id, last_transaction_id, opened) 
-SELECT 0, 'belle@gmail.com', g.id, 0, NOW()
+INSERT INTO bank_account (balance, user_id, last_transaction_id) 
+SELECT 0, u.id, 0
 FROM user_account u
 WHERE u.name='Isobelle Patterson';
 

@@ -4,7 +4,6 @@ const handleGetAccounts = (db) => (req, res) => {
   return db.select('id').from('bank_account').where({ 'user_id': id })
     .then(accounts => {
       if (accounts.length) {
-        console.log('--------------- ' + accounts)
         Promise.resolve(res.status(200).json(accounts))
       } else {
         Promise.reject(res.status(404).json('Not found'));
