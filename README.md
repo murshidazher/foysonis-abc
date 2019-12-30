@@ -37,6 +37,13 @@ Seeded credentials :
 | `officer`         | email `test@test.com` &mdash; password `test` 
 | `user`        | email `belle@gmail.com` &mdash; password `belle`                                                                                      |
 
+### API Endpoints
+
+A list of backend API's endpoints :
+
+https://gist.github.com/murshidazher/f4eff2d7c0e5b6eefcc2e5989bc11fab
+
+
 ## Creators
 
 **Murshid Azher**
