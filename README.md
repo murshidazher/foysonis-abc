@@ -25,8 +25,7 @@ Step by Step Instructions:
 | build container         | Run `docker build -t abc-container .`
 | run container         | Run `docker-compose up --build .`
 | change directory         | Go to client `cd client` in another session
-| To stop docker container         | Run `docker-compose down`                                       |
-| `build`          | Build bestil using `npm run build` or `yarn run build`                                                                                                 |
+| To stop docker container         | Run `docker-compose down`                                       |                                                                                                |
                             
 ### Credentials
 
