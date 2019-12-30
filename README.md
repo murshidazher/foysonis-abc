@@ -5,6 +5,10 @@
 ## ABC Bank & Co.
 A simple bank transaction example.
 
+
+![abc-bank-gif](https://github.com/murshidazher/foysonis-abc/blob/master/client/src/img/abc.gif)
+
+
 ## Technology Stack
 * :zap: [React](https://reactjs.org/) - is a JavaScript library for building User Interfaces.
 * :gem: [Sketch](https://www.sketch.com/) - Sketch is a digital design toolkit for prototyping.

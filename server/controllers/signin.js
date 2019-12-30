@@ -2,6 +2,7 @@ const handleSignin = (db, bcrypt, req, res) => {
 
     const { email, password } = req.body;
 
+
     if ( !email || !password ) {
         return Promise.reject('incorrect form submission');
     }
@@ -15,14 +16,15 @@ const handleSignin = (db, bcrypt, req, res) => {
                 return db.select('*').from('user_account')
                 .where('email', '=', email)
                 .then(user => {
-                    return ({
+                        console.log('------ done ' + user)
+                    Promise.resolve({
                         email: user[0].email,
                         id: user[0].id,
-                    })
+                    });
                 })
-                .catch(err => Promise.reject('error logging in'));
+                    .catch(err => { console.log('------ errorrrr ' + user); Promise.reject('error logging in') });
             } else {
-                Promise.reject('wrong credentials')
+                res.json('wrong credentials')
             }
         })
         .catch(err => Promise.reject('wrong credentials'))    

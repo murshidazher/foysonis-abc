@@ -34,7 +34,10 @@ class Login extends React.Component {
     })
       .then(resp => resp.json())
       .then(data => {
+        console.log('hehhehehhe')
+        console.log(data)
         if (data.userId && data.success === 'true') {
+         
           this.saveAuthTokenInSession(data.token)
 
           fetch(`http://localhost:8080/profile/${data.userId}`, {

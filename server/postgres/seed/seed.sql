@@ -52,7 +52,7 @@ AND u.name='Administrator';
 
 
 INSERT INTO credential (hash, email) 
-VALUES ('$2a$10$IUZWPT6q4QaEkXLLqDX3Du66d1u3lJXaJaaAdkWVKIpl.c/MqNDRy', 'admin@test.com');
+VALUES ('$2a$10$YeJlNWzfcyvrr22GUGT2oeeUXKTsRP1n45IQugduxET/t/EOgf//K', 'admin@test.com');
 
 INSERT INTO user_account (name, email, joined, group_id, user_role_id) 
 SELECT 'Officer', 'test@test.com', NOW(), g.id, u.id
@@ -61,7 +61,7 @@ WHERE g.name='Employee'
 AND u.name='Bank Officer';
 
 INSERT INTO credential (hash, email) 
-VALUES ('$2a$10$0fetMndoOk3k4bzCE7UpVOW6xMTL8Yv9C5sxSlkTMsu/5rbL3WVYS', 'test@test.com');
+VALUES ('$2a$10$sDe0D3Luw3RKNgTqndSfKOw0D0jqJF2.8gIJztHbQdHOe0exdlrI6', 'test@test.com');
 
 
 INSERT INTO user_account (name, email, joined, group_id, user_role_id) 
